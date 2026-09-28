@@ -1,1 +1,26 @@
+# Dependencies and coverage output.
+node_modules/
+coverage/
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# Local configuration and secrets. `.env` is ignored, `.env.example` is not:
+# never commit real credentials, tokens or host-specific paths.
+.env
+.env.*
+!.env.example
+
+# Infrastructure state, if anyone runs Terraform locally. State files routinely
+# contain resource credentials in plaintext.
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+
+# Editor and OS noise.
 .idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db

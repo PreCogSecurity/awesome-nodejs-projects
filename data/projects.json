@@ -1,0 +1,293 @@
+{
+  "$schema": "./projects.schema.json",
+  "schemaVersion": 1,
+  "categories": [
+    {
+      "id": "cms",
+      "title": "CMS"
+    },
+    {
+      "id": "developers",
+      "title": "Developers",
+      "children": [
+        {
+          "id": "electron-apps",
+          "title": "Electron apps"
+        }
+      ]
+    },
+    {
+      "id": "forms",
+      "title": "Forms"
+    },
+    {
+      "id": "blogs",
+      "title": "Blogs"
+    },
+    {
+      "id": "lifestyle",
+      "title": "Lifestyle"
+    },
+    {
+      "id": "business",
+      "title": "Business"
+    },
+    {
+      "id": "science",
+      "title": "Science"
+    },
+    {
+      "id": "ecommerce",
+      "title": "E-commerce",
+      "children": [
+        {
+          "id": "meteor-apps",
+          "title": "Meteor apps"
+        }
+      ]
+    },
+    {
+      "id": "chat-bots",
+      "title": "Chat Bots"
+    }
+  ],
+  "projects": [
+    {
+      "category": "cms",
+      "name": "Keystone",
+      "repo": "https://github.com/keystonejs/keystone",
+      "website": "https://keystonejs.com/",
+      "description": "The open source framework for developing database-driven websites, applications and APIs. Built on Express and MongoDB."
+    },
+    {
+      "category": "cms",
+      "name": "Pencilblue",
+      "repo": "https://github.com/pencilblue/pencilblue",
+      "website": "https://pencilblue.org/",
+      "description": "Business class content management."
+    },
+    {
+      "category": "cms",
+      "name": "Apostrophe",
+      "repo": "https://github.com/punkave/apostrophe",
+      "website": "https://apostrophecms.org/",
+      "description": "A CMS framework that supports in-context editing, schema-driven content types, flexible widgets, and much more."
+    },
+    {
+      "category": "cms",
+      "name": "Cody",
+      "repo": "https://github.com/jcoppieters/cody/",
+      "website": "https://howest.cody-cms.org/en/",
+      "description": "JavaScript content management system."
+    },
+    {
+      "category": "cms",
+      "name": "HashBrown",
+      "repo": "https://github.com/putaitu/hashbrown-cms/",
+      "website": "https://hashbrown.rocks/",
+      "description": "Remote, multilingual, multi-project, multi-environment CMS using customisable content and field schemas."
+    },
+    {
+      "category": "cms",
+      "name": "Strapi",
+      "repo": "https://github.com/strapi/strapi",
+      "website": "https://strapi.io/",
+      "description": "An open source ecosystem to build, deploy and manage your own API."
+    },
+    {
+      "category": "cms",
+      "name": "Enduro.js",
+      "repo": "https://github.com/gottwik/enduro",
+      "website": "https://endurojs.com/",
+      "description": "Minimalistic, flat-file, full-fledged CMS that gets your website running in minutes."
+    },
+    {
+      "category": "developers",
+      "name": "Shield",
+      "repo": "https://github.com/badges/shields",
+      "website": "https://shields.io/",
+      "description": "Shields badge specification, website and default API server."
+    },
+    {
+      "category": "developers",
+      "name": "David-www",
+      "repo": "https://github.com/alanshaw/david-www",
+      "website": "https://david-dm.org/",
+      "description": "David helps keep your project dependencies up to date."
+    },
+    {
+      "category": "developers",
+      "name": "JSON-server",
+      "repo": "https://github.com/typicode/json-server",
+      "description": "Get a full fake REST API with zero coding in less than 30 seconds (seriously)."
+    },
+    {
+      "category": "developers",
+      "name": "Wordpress rest-api-console2",
+      "repo": "https://github.com/Automattic/rest-api-console2",
+      "website": "https://developer.wordpress.com/docs/api/console/",
+      "description": "WordPress.com REST API developer console."
+    },
+    {
+      "category": "developers",
+      "name": "Mongo-Express",
+      "repo": "https://github.com/mongo-express/mongo-express",
+      "description": "Web-based MongoDB admin interface, written with Express."
+    },
+    {
+      "category": "developers",
+      "name": "Eve",
+      "repo": "https://github.com/witheve/eve",
+      "website": "https://witheve.com/",
+      "description": "Eve is a set of tools to help us think. Currently, these tools include: a temporal query language, a compiler, and a database."
+    },
+    {
+      "category": "developers",
+      "name": "Hotel",
+      "repo": "https://github.com/typicode/hotel",
+      "description": "Start your dev servers from your browser and get local domains in seconds."
+    },
+    {
+      "category": "developers",
+      "name": "Hackathon Starter",
+      "repo": "https://github.com/sahat/hackathon-starter",
+      "description": "A boilerplate for web applications."
+    },
+    {
+      "category": "developers",
+      "name": "Node-RED",
+      "repo": "https://github.com/node-red/node-red",
+      "description": "A visual tool for wiring the Internet of Things."
+    },
+    {
+      "category": "developers",
+      "name": "nscm",
+      "repo": "https://github.com/nodesource/nscm",
+      "description": "An open-source CLI tool for working with NodeSource Certified Modules."
+    },
+    {
+      "category": "electron-apps",
+      "name": "Atom",
+      "repo": "https://github.com/atom/atom",
+      "website": "https://atom.io/",
+      "description": "Fully hackable text editor using Chrome."
+    },
+    {
+      "category": "electron-apps",
+      "name": "Visual Studio Code",
+      "repo": "https://github.com/microsoft/vscode",
+      "website": "https://code.visualstudio.com/",
+      "description": "An Electron based text editor created by Microsoft."
+    },
+    {
+      "category": "forms",
+      "name": "TellForm",
+      "repo": "https://github.com/whitef0x0/tellform",
+      "website": "https://tellform.com/",
+      "description": "A beautiful and powerful self-hostable form and survey builder similar to Typeform or Google Forms."
+    },
+    {
+      "category": "blogs",
+      "name": "Ghost",
+      "repo": "https://github.com/TryGhost/Ghost",
+      "website": "https://ghost.org/",
+      "description": "A simple, powerful publishing platform."
+    },
+    {
+      "category": "blogs",
+      "name": "Mean-Blog",
+      "repo": "https://github.com/DimitriMikadze/Mean-Blog",
+      "description": "Blog using ExpressJS, AngularJS and MongoDB. MEAN JavaScript full-stack application."
+    },
+    {
+      "category": "blogs",
+      "name": "Wordpress Calypso",
+      "repo": "https://github.com/Automattic/wp-calypso",
+      "website": "https://developer.wordpress.com/calypso/",
+      "description": "The new JavaScript- and API-powered WordPress.com."
+    },
+    {
+      "category": "blogs",
+      "name": "Hexo",
+      "repo": "https://github.com/hexojs/hexo",
+      "website": "https://hexo.io/",
+      "description": "A fast, simple and powerful blog framework."
+    },
+    {
+      "category": "blogs",
+      "name": "Reptar",
+      "repo": "https://github.com/reptar/reptar",
+      "website": "https://reptar.github.io/",
+      "description": "Powerful, modern, and flexible static site generator."
+    },
+    {
+      "category": "lifestyle",
+      "name": "Cozy",
+      "repo": "https://github.com/cozy/simple-cozy",
+      "website": "https://cozy.io/",
+      "description": "Personal cloud: own, synchronize and connect your data."
+    },
+    {
+      "category": "lifestyle",
+      "name": "Mediacenterjs",
+      "repo": "https://github.com/jansmolders86/mediacenterjs",
+      "website": "https://mediacenterjs.com/",
+      "description": "An HTML/CSS/JavaScript based media center."
+    },
+    {
+      "category": "lifestyle",
+      "name": "Habitica",
+      "repo": "https://github.com/HabitRPG/habitica",
+      "website": "https://habitica.com/static/front/",
+      "description": "A habit tracker app which treats your goals like a role playing game."
+    },
+    {
+      "category": "lifestyle",
+      "name": "moeda",
+      "repo": "https://github.com/thompsonemerson/moeda",
+      "description": "Foreign exchange rates and currency conversion from the command line."
+    },
+    {
+      "category": "business",
+      "name": "TimeOff Management",
+      "repo": "https://github.com/timeoff-management/application",
+      "website": "https://timeoff.management/",
+      "description": "Simple yet powerful absence management software for small and medium size business."
+    },
+    {
+      "category": "business",
+      "name": "Gadael",
+      "repo": "https://github.com/gadael/gadael",
+      "website": "https://www.gadael.org/",
+      "description": "Leave management software with French work regulations support."
+    },
+    {
+      "category": "business",
+      "name": "Basic Hospital Information Management Application",
+      "repo": "https://github.com/IMA-WorldHealth/bhima-2.X",
+      "website": "https://bhi.ma/",
+      "description": "Hospital management suite for the developing world."
+    },
+    {
+      "category": "science",
+      "name": "NASA's Open MCT",
+      "repo": "https://github.com/nasa/openmct",
+      "website": "https://nasa.github.io/openmct/",
+      "description": "A web based mission control framework."
+    },
+    {
+      "category": "meteor-apps",
+      "name": "Reaction Commerce",
+      "repo": "https://github.com/reactioncommerce/reaction",
+      "website": "https://reactioncommerce.com/",
+      "description": "A modern reactive, real-time event-driven ecommerce platform."
+    },
+    {
+      "category": "chat-bots",
+      "name": "PokéDex Go Messenger Bot",
+      "repo": "https://github.com/zwacky/pokedex-go",
+      "website": "https://www.facebook.com/PokedexGo/",
+      "description": "A Pokédex messenger bot for Pokémon Go to easily find Pokémon and their strengths and weaknesses."
+    }
+  ]
+}

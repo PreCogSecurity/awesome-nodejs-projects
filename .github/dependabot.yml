@@ -1,0 +1,33 @@
+# Dependency hygiene.
+#
+# The npm ecosystem currently resolves to nothing - this repository has no
+# third-party dependencies on purpose - but the updater keeps that true as soon
+# as one is added, and keeps the pinned GitHub Actions and the base image
+# current, which are the two places where a stale pin actually matters.
+
+version: 2
+
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps)"
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(ci)"
+
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: "chore(docker)"
