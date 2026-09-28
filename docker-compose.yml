@@ -1,8 +1,34 @@
+# Verification runner for the curated list.
+#
+# `docker compose run --rm verify` executes exactly the checks CI runs, inside a
+# rootless, capability-free, read-only container with no network access.
+
 services:
-  app:
-    build: .
-    ports:
-      - "8080:8080"
-    volumes:
-      - .:/app
-    working_dir: /app
+  verify:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # Run as the unprivileged uid/gid baked into the image; never as root.
+    user: "${APP_UID:-1000}:${APP_GID:-1000}"
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    # PID 1 reaps zombies and forwards signals; without it, `docker compose run`
+    # needs SIGKILL to stop.
+    init: true
+    # The verification suite reads files and writes nothing but a temp cache, so
+    # it needs no writable root filesystem. `read_only` above would break any
+    # package that tried to write outside /tmp.
+    tmpfs:
+      - /tmp:size=32m,mode=1777
+    # The suite is offline by design: no dependency installs, no link checking,
+    # no telemetry. Removing this is a deliberate act, not a default.
+    network_mode: none
+    environment:
+      NPM_CONFIG_CACHE: /tmp/npm-cache
+    command:
+      - npm
+      - run
+      - verify

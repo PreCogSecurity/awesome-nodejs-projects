@@ -1,0 +1,32 @@
+# Build context exclusions.
+#
+# The Dockerfile copies an explicit allowlist, so this file is defence in depth:
+# it guarantees that `.git` history, local secrets, dependency trees and build
+# artefacts can never reach the build context, and therefore can never be baked
+# into an image even if the Dockerfile is later simplified.
+
+# VCS history contains the full commit log and any credential ever committed.
+.git
+.gitignore
+.gitattributes
+.github
+
+# Local configuration and secrets. Only .env.example is ever committed.
+.env
+.env.*
+!.env.example
+
+# Dependencies and coverage output.
+node_modules
+coverage
+*.log
+npm-debug.log*
+
+# Infrastructure and editor state.
+.terraform
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+.idea
+.vscode
+.DS_Store

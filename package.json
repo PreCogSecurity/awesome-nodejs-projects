@@ -1,0 +1,28 @@
+{
+  "name": "awesome-nodejs-projects",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A curated list of awesome open-source applications made with Node.js, validated and rendered from a single machine-readable source of truth.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "packageManager": "npm@11.17.0",
+  "scripts": {
+    "lint": "node src/lint.mjs",
+    "validate": "node src/validate-cli.mjs",
+    "render": "node src/render.mjs --write",
+    "check:readme": "node src/render.mjs --check",
+    "test": "node --test \"test/**/*.test.mjs\"",
+    "verify": "npm run lint && npm run validate && npm run check:readme && npm test",
+    "audit": "npm audit --audit-level=high"
+  },
+  "keywords": [
+    "awesome-list",
+    "nodejs",
+    "curated-list"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}

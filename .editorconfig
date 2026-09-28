@@ -1,0 +1,20 @@
+# Normalise line endings on checkin/out to avoid noisy diffs across platforms.
+* text=auto eol=lf
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+# A single trailing space is a hard line break in Markdown; the repo's linter
+# enforces the "no trailing whitespace" convention, so trimming stays on.
+trim_trailing_whitespace = true
+
+[Makefile]
+indent_style = tab

@@ -1,0 +1,29 @@
+# Normalise line endings in the repository so that a Windows, macOS and Linux
+# contributor all produce byte-identical files. Without this, the linter's
+# `crlf` rule fails on a checkout that Git rewrote, and every file shows up as
+# modified in `git status`.
+* text=auto eol=lf
+
+*.md      text eol=lf
+*.mjs     text eol=lf
+*.js      text eol=lf
+*.json    text eol=lf
+*.yml     text eol=lf
+*.yaml    text eol=lf
+*.tf      text eol=lf
+Dockerfile text eol=lf
+.gitignore   text eol=lf
+.gitattributes text eol=lf
+.editorconfig text eol=lf
+.env.example text eol=lf
+.nvmrc        text eol=lf
+LICENSE       text eol=lf
+
+# Never mangle binary assets.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.pdf   binary
+*.woff2 binary

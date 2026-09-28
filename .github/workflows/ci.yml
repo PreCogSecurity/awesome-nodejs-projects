@@ -1,0 +1,86 @@
+name: CI
+
+# Every push and pull request runs the full local verification suite. The goal is
+# that a fresh clone on any machine can reproduce exactly what CI ran, by
+# running `npm run verify`.
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+# Least privilege: this workflow only ever needs to read the repository. It
+# never writes to the tree and never publishes anything.
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Lint, validate, test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4.2.2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4.1.0
+        with:
+          node-version-file: .nvmrc
+          # Restore the dependency cache from the committed lockfile. The
+          # repository has no dependencies today; this stays correct if that
+          # changes and keeps installs hermetic.
+          cache: npm
+
+      - name: Install from the lockfile
+        # --ignore-scripts: never execute package lifecycle scripts in CI.
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Validate curated data
+        run: npm run validate
+
+      - name: Confirm README.md matches data/projects.json
+        run: npm run check:readme
+
+      - name: Test
+        run: npm test
+
+  audit:
+    name: Dependency audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4.2.2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Fail on known high or critical vulnerabilities
+        run: npm audit --audit-level=high
+
+  container:
+    name: Verification container
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4.2.2
+
+      - name: Build the verification image
+        run: docker build --tag awesome-nodejs-projects:verify .
+
+      - name: Run the suite as the unprivileged, read-only, offline service
+        run: docker compose run --rm verify
